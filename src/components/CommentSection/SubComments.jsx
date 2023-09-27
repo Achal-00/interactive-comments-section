@@ -13,13 +13,13 @@ export default function SubComments(props) {
               name=""
               id=""
               cols="30"
-              rows="5"
+              rows="2"
               className="col-start-1 col-end-3 landscape:lg:col-start-2 landscape:lg:col-end-4 text-greyish-blue rounded-md p-3 bg-white"
               disabled
             >
               {element.content}
             </textarea>
-            <div className="grid justify-items-start landscape:lg:justify-items-stretch landscape:lg:row-start-1 landscape:lg:row-end-3">
+            <div className="grid self-start justify-items-start landscape:lg:justify-items-stretch landscape:lg:row-start-1 landscape:lg:row-end-3">
               <div className="flex landscape:lg:flex-col items-center gap-4 bg-very-light-grey py-2 px-4 landscape:lg:py-4 landscape:lg:px-2 rounded-md">
                 <button>
                   <img src="icon-plus.svg" alt="" />
@@ -51,7 +51,7 @@ export default function SubComments(props) {
             <p className="col-start-1 col-end-3 landscape:lg:col-start-2 landscape:lg:col-end-4 text-greyish-blue">
               {element.content}
             </p>
-            <div className="grid justify-items-start landscape:lg:justify-items-stretch landscape:lg:row-start-1 landscape:lg:row-end-3">
+            <div className="grid self-start justify-items-start landscape:lg:justify-items-stretch landscape:lg:row-start-1 landscape:lg:row-end-3">
               <div className="flex landscape:lg:flex-col items-center gap-4 bg-very-light-grey py-2 px-4 landscape:lg:py-4 landscape:lg:px-2 rounded-md">
                 <button>
                   <img src="icon-plus.svg" alt="" />

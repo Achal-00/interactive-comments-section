@@ -12,7 +12,7 @@ export default function App() {
     <CommentContext.Provider value={{ commentData, setCommentData }}>
       <div className="font-custom-font-family min-h-[100dvh] p-[5%] bg-light-grey flex flex-col gap-4">
         <CommentSection />
-        <InputSection />
+        <InputSection wh="landscape:lg:w-1/2" id="1" />
       </div>
     </CommentContext.Provider>
   );

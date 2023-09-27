@@ -1,30 +1,52 @@
 import { useContext, useEffect, useState } from "react";
 import { CommentContext } from "../App";
 
-export default function InputSection() {
+export default function InputSection(props) {
   const { commentData, setCommentData } = useContext(CommentContext);
   const [comment, setComment] = useState("");
 
-  // useEffect(() => {
-  //   console.log(commentData);
-  // }, [commentData]);
+  useEffect(() => {
+    console.log(commentData);
+  }, [commentData]);
 
   async function submitHandler() {
-    let size = commentData.length;
-    commentData[size] = {
-      id: size + 1,
-      content: comment,
-      createdAt: "Just now",
-      score: 0,
-      username: "juliusomo",
-      image: "avatars/image-juliusomo.webp",
-      replies: [],
-    };
-    await setCommentData([...commentData]);
+    if (props.id === "1") {
+      console.log("ok");
+      const temp = commentData;
+      let size = temp.length;
+      temp[size] = {
+        id: size + 1,
+        content: comment,
+        createdAt: "Just Now",
+        score: 0,
+        username: "juliusomo",
+        image: "avatars/image-juliusomo.webp",
+        replies: [],
+      };
+      setCommentData([...temp]);
+    } else if (props.id === "2") {
+      let temp = commentData;
+      let size = temp[temp.indexOf(props.element)].replies.length;
+      temp[temp.indexOf(props.element)].replies[size] = {
+        id: size + 1,
+        content: comment,
+        createdAt: "Just Now",
+        score: 0,
+        username: "juliusomo",
+        image: "avatars/image-juliusomo.webp",
+      };
+      setCommentData([...temp]);
+      let anotherTemp = commentData;
+      anotherTemp[anotherTemp.indexOf(props.element)].test =
+        !anotherTemp[anotherTemp.indexOf(props.element)].test;
+      setCommentData([...anotherTemp]);
+    }
   }
 
   return (
-    <section className="bg-white p-4 rounded-lg landscape:lg:w-1/2 landscape:lg:mx-auto">
+    <section
+      className={`bg-white w-full p-4 rounded-lg landscape:lg:mx-auto ${props.wh}`}
+    >
       <div className="grid gap-4 landscape:lg:hidden">
         <textarea
           name=""

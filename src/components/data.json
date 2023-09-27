@@ -6,7 +6,8 @@
       "score": 12,
       "username": "amyrobson",
       "image": "avatars/image-amyrobson.webp",
-      "replies": []
+      "replies": [],
+      "test": false
   },
   {
     "id": 2,
@@ -15,6 +16,7 @@
       "score": 5,
       "username": "maxblagun",
       "image": "avatars/image-maxblagun.webp",
+      "test": false,
       "replies": [
         {
           "id": 1,
