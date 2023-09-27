@@ -1,17 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { CommentContext } from "../App";
 
 export default function InputSection(props) {
   const { commentData, setCommentData } = useContext(CommentContext);
   const [comment, setComment] = useState("");
 
-  useEffect(() => {
-    console.log(commentData);
-  }, [commentData]);
-
   async function submitHandler() {
+    document.querySelector(".main-input").value = "";
     if (props.id === "1") {
-      console.log("ok");
       const temp = commentData;
       let size = temp.length;
       temp[size] = {
@@ -21,6 +17,8 @@ export default function InputSection(props) {
         score: 0,
         username: "juliusomo",
         image: "avatars/image-juliusomo.webp",
+        deleteFlag: false,
+        editFlag: false,
         replies: [],
       };
       setCommentData([...temp]);
@@ -34,6 +32,8 @@ export default function InputSection(props) {
         score: 0,
         username: "juliusomo",
         image: "avatars/image-juliusomo.webp",
+        deleteFlag: false,
+        editFlag: false,
       };
       setCommentData([...temp]);
       let anotherTemp = commentData;
@@ -73,7 +73,7 @@ export default function InputSection(props) {
           id=""
           rows="2"
           placeholder="Add a comment..."
-          className="border-2 rounded-md p-3"
+          className="border-2 rounded-md p-3 main-input"
           onChange={(e) => setComment(e.currentTarget.value)}
         ></textarea>
         <button
